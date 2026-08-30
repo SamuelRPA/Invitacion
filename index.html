@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mis 15 Años - Valery (Invitación Imperial)</title>
+    <meta name="description"
+        content="Estás cordialmente invitado a celebrar los 15 años de Valery. ¡Te esperamos en esta noche inolvidable!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mulan-theme">
+
+    <!-- REPRODUCTOR DE MÚSICA DE FONDO -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="Musica/Danny Ocean - Corazón (OFFICIAL VIDEO).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- BOTÓN FLOTANTE DE MÚSICA -->
+    <button id="music-toggle" class="floating-music-btn" aria-label="Controlar Música"
+        title="Reproducir / Pausar Música">
+        <i class="fas me-icon fa-music"></i>
+        <div class="music-waves">
+            <span></span><span></span><span></span>
+        </div>
+    </button>
+
+    <!-- OVERLAY DEL ÁRBOL DE SOBRES E INVITACIÓN IMPERIAL -->
+    <div id="envelope-screen" class="envelope-screen">
+        <div class="tree-envelope-wrapper">
+
+            <!-- ÁRBOL DORADO CON SOBRES ROJOS SUBIDO POR LA USUARIA -->
+            <div class="tree-container">
+                <img src="Images/ArbolSobre.png" alt="Árbol de Sobres Imperial" class="tree-img">
+
+                <!-- SOBRE PRINCIPAL QUE CAE DEL ÁRBOL Y SE ACERCA A LA PANTALLA -->
+                <div class="hanging-envelope" id="hanging-envelope">
+                    <div class="envelope" id="envelope">
+                        <div class="envelope-back"></div>
+                        <div class="envelope-top-flap"></div>
+                        <div class="envelope-left-flap"></div>
+                        <div class="envelope-right-flap"></div>
+
+                        <!-- SELLO DE CERA DORADO CON DRAGÓN -->
+                        <div class="wax-seal" id="wax-seal" role="button" aria-label="Abrir Invitación">
+                            <div class="seal-inner">
+                                <i class="fas fa-dragon seal-dragon-icon"></i>
+                                <span class="seal-xv">XV</span>
+                                <span class="seal-tap-text">Abrir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="envelope-hint"><i class="fas fa-hand-pointer"></i> Toca el sobre para hacer que caiga y abra la
+                invitación</p>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA INVITACIÓN -->
+    <main id="main-content" class="invitation-container content-hidden">
+
+        <!-- SECCIÓN 1: HERO PORTADA IMPERIAL CON FONDO CHINO Y RETRATO DE VALERY -->
+        <section class="hero-cover-card hero-section">
+            <!-- FONDO CHINO TRADICIONAL DE LA USUARIA -->
+            <div class="hero-full-bg-wrapper">
+                <img src="Images/FondoChino.jpg" alt="Fondo Chino Imperial" class="hero-full-bg-img">
+            </div>
+
+            <!-- SOBREPOSICIÓN DE TEXTO Y FOTO DE LA QUINCEAÑERA -->
+            <div class="hero-content-overlay">
+                <div class="gif-hero-accent">
+                    <img src="Images/dailyfina-lunar-17723.gif" alt="Brillo Imperial" class="gif-img-accent">
+                </div>
+
+                <!-- RETRATO DE VALERY EN MARCO DORADO IMPERIAL -->
+                <div class="valery-portrait-wrapper">
+                    <div class="gold-portrait-ring">
+                        <img src="Images/VlaeryBB.jpeg" alt="Valery Quinceañera" class="valery-portrait-img">
+                    </div>
+                </div>
+
+                <div class="hero-text-group">
+                    <p class="hero-subtitle">Mis 15 Años</p>
+                    <h1 class="hero-name-title">Valery</h1>
+                    <p class="hero-invite-tag">TE INVITO A CELEBRAR</p>
+
+                    <div class="hero-divider">
+                        <span class="gold-line"></span>
+                        <i class="fas fa-dragon gold-sparkle"></i>
+                        <span class="gold-line"></span>
+                    </div>
+
+                    <p class="hero-date-highlight">21 DE NOVIEMBRE DE 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: DALE PLAY A MI CANCIÓN FAVORITA -->
+        <section class="torn-card music-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <p class="music-section-title">Dale play a mi canción favorita</p>
+
+                <div class="player-widget" id="custom-player-trigger">
+                    <button class="player-btn-play" aria-label="Reproducir">
+                        <i class="fas fa-play" id="player-play-icon"></i>
+                    </button>
+                    <div class="player-info">
+                        <span class="player-song-title">Danny Ocean - Corazón</span>
+                        <div class="player-progress-bar">
+                            <div class="player-progress-fill" id="player-progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 3: FRASE DE BIENVENIDA -->
+        <section class="torn-card quote-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <p class="quote-text">
+                    "Hoy celebro con alegría mis 15 años, un regalo de vida lleno de momentos inolvidables, rodeada del
+                    amor de mi familia y amigos."
+                </p>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 4: MIS PADRES -->
+        <section class="torn-card parents-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <div class="section-badge-dragon"><i class="fas fa-dragon"></i></div>
+                <h2 class="section-title-script">Con la bendición de mis Padres</h2>
+                <div class="gold-line-center"></div>
+
+                <div class="parents-container">
+                    <div class="parent-card-box">
+                        <i class="fas fa-user-circle parent-avatar"></i>
+                        <h3>Carla Cristina Almendras Arequipa</h3>
+                        <span class="parent-tag">Mamá</span>
+                    </div>
+
+                    <div class="parent-ampersand">&</div>
+
+                    <div class="parent-card-box">
+                        <i class="fas fa-user-circle parent-icon-avatar"></i>
+                        <h3>Sten Wens Cabredo Vilchez</h3>
+                        <span class="parent-tag">Papá</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 5: CUENTA REGRESIVA CON GIF LUNAR -->
+        <section class="torn-card countdown-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="countdown-gif-wrapper">
+                <img src="Images/dailyfina-lunar-17725.gif" alt="Animación Cuenta Regresiva" class="countdown-gif-img">
+            </div>
+
+            <div class="card-inner text-center">
+                <h2 class="section-title-script">Tan solo faltan</h2>
+                <div class="gold-line-center"></div>
+
+                <div id="countdown" class="countdown-grid">
+                    <div class="time-box">
+                        <span id="days" class="time-number">00</span>
+                        <span class="time-label">Días</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours" class="time-number">00</span>
+                        <span class="time-label">Horas</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes" class="time-number">00</span>
+                        <span class="time-label">Min</span>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds" class="time-number">00</span>
+                        <span class="time-label">Seg</span>
+                    </div>
+                </div>
+
+                <p class="countdown-subtext">Para celebrar este día tan especial</p>
+
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+A%C3%B1os+Valery&dates=20261121T220000Z/20261122T040000Z&details=Celebraci%C3%B3n+de+Mis+15+A%C3%B1os+Valery&location=AVANTI+HOTEL+%26+CONVENTION+CENTER"
+                    target="_blank" rel="noopener noreferrer" class="btn-calendar-add">
+                    <i class="far fa-calendar-plus"></i> Agendar en el calendario
+                </a>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 6: ¿CUÁNDO & DÓNDE? -->
+        <section class="torn-card location-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <h2 class="section-title-script">¿Cuándo & Dónde?</h2>
+                <div class="gold-line-center"></div>
+                <p class="section-desc">
+                    A continuación encontrarás la fecha, horario y ubicación del evento, así como el botón directo a
+                    Google Maps para llegar fácilmente.
+                </p>
+
+                <div class="location-details-box">
+                    <div class="loc-item">
+                        <div class="loc-icon-badge"><i class="fas fa-calendar-alt"></i></div>
+                        <span class="loc-label">FECHA</span>
+                        <p class="loc-val">Sábado, 21 de Noviembre del 2026</p>
+                    </div>
+
+                    <div class="loc-item">
+                        <div class="loc-icon-badge"><i class="far fa-clock"></i></div>
+                        <span class="loc-label">HORARIO</span>
+                        <p class="loc-val">Recepción: 18:00 Hrs.</p>
+                    </div>
+
+                    <div class="loc-item">
+                        <div class="loc-icon-badge"><i class="fas fa-map-marker-alt"></i></div>
+                        <span class="loc-label">LUGAR</span>
+                        <p class="loc-val-main">AVANTI HOTEL <br>SALON CRISTAL</p>
+                        <p class="loc-val-sub">Cochabamba - Bolivia</p>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/GfJRMdu6ZDYpSPzY7" target="_blank" rel="noopener noreferrer"
+                        class="btn-location-maps">
+                        <i class="fas fa-map-marked-alt"></i> Ver ubicación en Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 7: REGALOS Y LLUVIA DE SOBRES -->
+        <section class="torn-card gifts-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <div class="section-badge-dragon"><i class="fas fa-gift"></i></div>
+                <h2 class="section-title-script">Sugerencia de Regalos</h2>
+                <div class="gold-line-center"></div>
+
+                <p class="section-desc">
+                    Tu presencia es nuestro mejor regalo. Si deseas hacernos un detalle adicional, disponemos de la
+                    modalidad de <strong>Lluvia de Sobres</strong> y transferencia bancaria <strong>QR</strong>.
+                </p>
+
+                <div class="gifts-grid">
+                    <!-- QR BOX -->
+                    <div class="gift-card-box">
+                        <div class="gift-header"><i class="fas fa-qrcode"></i> Transferencia QR (Yape)</div>
+                        <div class="qr-wrapper">
+                            <img src="Images/QR_cropped.png" alt="Código QR Yape - Sten Wens Cabredo Vilchez"
+                                class="qr-real-img">
+                        </div>
+                        <p class="qr-foot">Escanea desde tu app Yape o bancaria</p>
+                    </div>
+
+                    <!-- LLUVIA DE SOBRES BOX -->
+                    <div class="gift-card-box">
+                        <div class="gift-header"><i class="fas fa-envelope-open-text"></i> Lluvia de Sobres</div>
+                        <p class="gift-text">El día de la fiesta dispondremos de un cofre especial para depositar tus
+                            felicitaciones y cariño.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 8: CÓDIGO DE VESTIMENTA -->
+        <section class="torn-card dresscode-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <h2 class="section-title-script">Código de Vestimenta</h2>
+                <div class="gold-line-center"></div>
+
+                <div class="dresscode-main-card">
+                    <span class="dresscode-subtitle">TRAJE FORMAL</span>
+
+                    <!-- ILUSTRACIONES DE VESTIDO Y TRAJE -->
+                    <div class="attire-icons-wrapper">
+                        <!-- VESTIDO DE GALA -->
+                        <div class="attire-box">
+                            <svg class="attire-svg" viewBox="0 0 100 140" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M28 20 C36 30 44 34 50 34 C56 34 64 30 72 20 C76 28 80 42 74 52 C70 58 65 62 65 68 C76 90 92 118 88 135 C75 138 50 136 50 136 C50 136 25 138 12 135 C8 118 24 90 35 68 C35 62 30 58 26 52 C20 42 24 28 28 20Z"
+                                    fill="url(#dressGrad)" />
+                                <path d="M38 50 C44 54 56 54 62 50 C61 58 57 62 50 62 C43 62 39 58 38 50Z"
+                                    fill="#FFD700" />
+                                <defs>
+                                    <linearGradient id="dressGrad" x1="50" y1="20" x2="50" y2="135"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#C41C2C" />
+                                        <stop offset="1" stop-color="#7A0914" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <!-- TRAJE / TUXEDO -->
+                        <div class="attire-box">
+                            <svg class="attire-svg" viewBox="0 0 100 140" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22 25 L38 20 L50 48 L62 20 L78 25 L84 75 L78 135 L60 135 L56 95 L50 95 L44 135 L22 135 L16 75 Z"
+                                    fill="url(#suitGrad)" />
+                                <path d="M38 20 L50 48 L62 20 L50 20 Z" fill="#FFFFFF" />
+                                <circle cx="50" cy="27" r="2.5" fill="#FFD700" />
+                                <circle cx="50" cy="35" r="2.5" fill="#FFD700" />
+                                <circle cx="50" cy="43" r="2.5" fill="#FFD700" />
+                                <path d="M22 25 L38 20 L50 65 L44 95 L22 25 Z" fill="#5E0812" />
+                                <path d="M78 25 L62 20 L50 65 L56 95 L78 25 Z" fill="#5E0812" />
+                                <defs>
+                                    <linearGradient id="suitGrad" x1="50" y1="20" x2="50" y2="135"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#9C1420" />
+                                        <stop offset="1" stop-color="#5E0812" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <p class="dresscode-motto">TODOS LISTOS PARA UNA NOCHE INOLVIDABLE</p>
+
+                    <div class="dresscode-reserve-box">
+                        <p class="dresscode-reserve-text">
+                            <i class="fas fa-crown"></i> RESERVAMOS TODA LA GAMA DE ROJO, ROSA Y DORADO PARA LA
+                            QUINCEAÑERA
+                        </p>
+
+                        <!-- CÍRCULOS DE COLORES RESERVADOS (GAMA DE ROSAS, ROJOS Y DORADO) -->
+                        <div class="color-swatches-container">
+                            <!-- TONOS DE ROSA -->
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-rosa-pastel" title="Rosa Pastel"></span>
+                                <span class="color-label">Rosa Pastel</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-rosa-palo" title="Rosa Palo"></span>
+                                <span class="color-label">Rosa Palo</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-rosa-fucsia" title="Rosa Intenso"></span>
+                                <span class="color-label">Rosa Intenso</span>
+                            </div>
+
+                            <!-- TONOS DE ROJO -->
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-carmesi" title="Rojo Carmesí"></span>
+                                <span class="color-label">Carmesí</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-escarlata" title="Rojo Escarlata"></span>
+                                <span class="color-label">Escarlata</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-cereza" title="Rojo Cereza"></span>
+                                <span class="color-label">Cereza</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-rubi" title="Rojo Rubí"></span>
+                                <span class="color-label">Rubí</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-granate" title="Rojo Granate"></span>
+                                <span class="color-label">Granate</span>
+                            </div>
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-vino" title="Rojo Vino"></span>
+                                <span class="color-label">Vino</span>
+                            </div>
+
+                            <!-- DORADO -->
+                            <div class="color-swatch-item">
+                                <span class="color-circle swatch-gold" title="Dorado Imperial"></span>
+                                <span class="color-label">Dorado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- SECCIÓN 9: CONFIRMACIÓN RSVP (WHATSAPP) -->
+        <section class="torn-card rsvp-section">
+            <div class="torn-edge top-torn"></div>
+
+            <div class="card-inner text-center">
+                <div class="section-badge-dragon"><i class="fab fa-whatsapp"></i></div>
+                <h2 class="section-title-script">Confirmación de Asistencia</h2>
+                <div class="gold-line-center"></div>
+                <p class="section-desc">Por favor confirma tu asistencia con tu nombre completo antes del <strong>8 de
+                        noviembre</strong>
+                    a los siguientes números
+                    de WhatsApp:</p>
+
+                <div class="rsvp-buttons-flex">
+                    <a href="https://wa.me/59179960960?text=%C2%A1Hola!%20Deseo%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20de%2015%20A%C3%B1os%20de%20Valery."
+                        target="_blank" rel="noopener noreferrer" class="btn-whatsapp-custom">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="wh-btn-info">
+                            <span class="wh-name">Quinceañera (Valery)</span>
+                            <span class="wh-num">+591 79960960</span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/59179795999?text=%C2%A1Hola!%20Deseo%20confirmar%20mi%20asistencia%20a%20la%20fiesta%20de%2015%20A%C3%B1os%20de%20Valery."
+                        target="_blank" rel="noopener noreferrer" class="btn-whatsapp-custom wh-secondary">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="wh-btn-info">
+                            <span class="wh-name">Mamá (Carla)</span>
+                            <span class="wh-num">+591 79795999</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="torn-edge bottom-torn"></div>
+        </section>
+
+        <!-- FOOTER DE AGRADECIMIENTO -->
+        <footer class="invitation-footer">
+            <img src="Images/FondoRosaConCasa.jpg" alt="Borla Footer" class="footer-tassel-img">
+            <p class="footer-quote">"Tu presencia hará que esta noche sea un momento inolvidable"</p>
+            <p class="footer-thanks">¡Te Esperamos!</p>
+            <p class="footer-year">2026</p>
+        </footer>
+
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
