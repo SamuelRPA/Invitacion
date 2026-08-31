@@ -3,8 +3,12 @@
    ========================================================================== */
 
 // Forzar inicio siempre desde la parte superior al recargar la página
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+try {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+} catch (e) {
+    // Protocolo file:// local seguro
 }
 window.scrollTo(0, 0);
 
