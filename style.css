@@ -154,14 +154,15 @@ body.envelope-active {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 440px;
+    max-width: 360px;
     position: relative;
+    padding: 10px;
 }
 
 .tree-container {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,7 +171,7 @@ body.envelope-active {
 .tree-img {
     width: 100%;
     height: auto;
-    max-height: 70vh;
+    max-height: 55vh;
     object-fit: contain;
     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
     animation: treeFloat 4s ease-in-out infinite alternate;
@@ -186,14 +187,14 @@ body.envelope-active {
     position: absolute;
     top: 42%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.65);
+    transform: translate(-50%, -50%) scale(0.52);
     z-index: 20;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .hanging-envelope:hover {
-    transform: translate(-50%, -50%) scale(0.72);
+    transform: translate(-50%, -50%) scale(0.58);
 }
 
 /* ANIMACIÓN: EL SOBRE SE CAE DEL ÁRBOL Y SE ACERCA A LA PANTALLA CADA VEZ MÁS GRANDE */
@@ -204,16 +205,16 @@ body.envelope-active {
 
 @keyframes fallAndZoom {
     0% {
-        transform: translate(-50%, -50%) scale(0.65) rotate(0deg);
+        transform: translate(-50%, -50%) scale(0.52) rotate(0deg);
     }
     30% {
-        transform: translate(-50%, 20px) scale(0.85) rotate(-6deg);
+        transform: translate(-50%, 15px) scale(0.68) rotate(-4deg);
     }
     65% {
-        transform: translate(-50%, 0px) scale(1.35) rotate(0deg);
+        transform: translate(-50%, 0px) scale(0.95) rotate(0deg);
     }
     100% {
-        transform: translate(-50%, -10px) scale(1.65) rotate(0deg);
+        transform: translate(-50%, -8px) scale(1.18) rotate(0deg);
     }
 }
 
@@ -1044,18 +1045,21 @@ body.envelope-active {
     color: var(--text-light);
     border: 1.5px solid var(--gold-primary);
     border-radius: 12px;
-    padding: 18px 10px;
+    padding: 16px 6px;
     box-shadow: 0 4px 12px rgba(158, 13, 27, 0.3);
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .dresscode-reserve-text {
     font-family: var(--font-sans);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     color: var(--text-gold);
-    margin-bottom: 16px;
-    line-height: 1.4;
+    margin-bottom: 14px;
+    line-height: 1.35;
+    padding: 0 4px;
 }
 
 .dresscode-reserve-text i {
@@ -1066,12 +1070,14 @@ body.envelope-active {
 /* CÍRCULOS DE COLORES RESERVADOS (REDONDITOS) */
 .color-swatches-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px 6px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px 2px;
     justify-items: center;
     align-items: start;
-    max-width: 380px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .color-swatch-item {
@@ -1080,18 +1086,19 @@ body.envelope-active {
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 64px;
+    min-width: 0;
+    overflow: visible;
 }
 
 .color-circle {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
-    border: 2.5px solid #FFFFFF;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4), 0 0 8px rgba(255, 215, 0, 0.35);
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 0 6px rgba(255, 215, 0, 0.35);
     transition: transform 0.2s ease;
     cursor: pointer;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     flex-shrink: 0;
 }
 
@@ -1140,16 +1147,19 @@ body.envelope-active {
 }
 
 .color-label {
-    font-size: 0.68rem;
+    font-size: 0.60rem;
     font-weight: 600;
     color: var(--text-light);
-    letter-spacing: 0.2px;
+    letter-spacing: 0px;
     text-align: center;
-    line-height: 1.15;
-    min-height: 2.3em;
+    line-height: 1.12;
+    min-height: 2.2em;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    word-break: normal;
+    white-space: normal;
 }
 
 /* RSVP WHATSAPP */
