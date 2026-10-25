@@ -1067,14 +1067,14 @@ body.envelope-active {
 }
 
 .qr-wrapper {
-    width: 220px;
-    max-width: 100%;
-    margin: 0 auto 12px;
+    width: 155px;
+    height: 155px;
+    margin: 0 auto 14px;
     background: #FFFFFF;
-    padding: 10px;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12), 0 0 15px rgba(255, 215, 0, 0.3);
-    border: 2px solid #E5C583;
+    padding: 7px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 12px rgba(255, 215, 0, 0.25);
+    border: 1.5px solid #E5C583;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1082,7 +1082,7 @@ body.envelope-active {
 
 .qr-real-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
     border-radius: 8px;
     display: block;
