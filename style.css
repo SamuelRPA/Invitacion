@@ -1067,12 +1067,12 @@ body.envelope-active {
 }
 
 .qr-wrapper {
-    width: 170px;
-    height: 170px;
-    margin: 0 auto 10px;
+    width: 220px;
+    max-width: 100%;
+    margin: 0 auto 12px;
     background: #FFFFFF;
     padding: 10px;
-    border-radius: 14px;
+    border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12), 0 0 15px rgba(255, 215, 0, 0.3);
     border: 2px solid #E5C583;
     display: flex;
@@ -1082,9 +1082,10 @@ body.envelope-active {
 
 .qr-real-img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
     border-radius: 8px;
+    display: block;
 }
 
 .qr-holder-name {
